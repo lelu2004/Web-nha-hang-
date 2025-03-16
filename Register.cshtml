@@ -1,0 +1,70 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="~/css/Register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="register" method="post" action="@Url.Action("Register", "Home")">
+                    <div class="register__field">
+                        <i class="register__icon fas fa-user"></i>
+                        <input type="text" class="register__input" placeholder="Tên đăng nhập" name="username" required>
+                    </div>
+
+                    <div class="register__field">
+                        <i class="register__icon fas fa-envelope"></i>
+                        <input type="email" class="register__input" placeholder="Email" name="email" required>
+                    </div>
+
+                    <div class="register__field">
+                        <i class="register__icon fas fa-lock"></i>
+                        <input type="password" class="register__input" placeholder="Mật khẩu" name="password" required>
+                    </div>
+
+                    <div class="register__field">
+                        <i class="register__icon fas fa-lock"></i>
+                        <input type="password" class="register__input" placeholder="Nhập lại mật khẩu" name="confirmPassword" required>
+                    </div>
+
+                    <p>Already have an account? <a href="@Url.Action("Login", "Home")">Login here</a></p>
+
+                    <button class="button register__submit" type="submit">
+                        <span class="button__text">Register</span>
+                        <i class="button__icon fas fa-user-plus"></i>
+                    </button>
+                </form>
+
+                <div class="social-login">
+                    <h3>Contact Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-login__icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-login__icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
